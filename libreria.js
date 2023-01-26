@@ -9,8 +9,9 @@ const fetchReference = async function () {
       const cardReference = document.querySelector(".row");
       data.forEach((book) => {
         let newCard = document.createElement("div");
+        //newCard.classList.add("col-");
 
-        newCard.innerHTML = `<div class="card col col-xxl-3 m-3 w-25" >
+        newCard.innerHTML = `<div class="card m-3 w-25" >
         <img src="${book.img}" class="card-img-top" alt="image poster" />
         <div class="card-body d-flex flex-column justify-content-center align-items-center bg-light ">
           <h5 class="card-title" id="cardTitle">${book.title}</h5>
@@ -23,11 +24,11 @@ const fetchReference = async function () {
       </div>`;
 
         cardReference.appendChild(newCard);
-
-        //titleReference.innerText = book.title;
       });
     }
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 fetchReference();
