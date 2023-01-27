@@ -6,12 +6,12 @@ const fetchReference = async function () {
       let data = await response.json();
       console.log("data", data);
 
-      const cardReference = document.querySelector(".row");
+      const cardReference = document.getElementById("cardAppend");
       data.forEach((book) => {
         let newCard = document.createElement("div");
-        //newCard.classList.add("col-");
-
-        newCard.innerHTML = `<div class="card m-3 w-25" >
+        newCard.innerHTML =
+          newCard.innerHTML +
+          `<div class="card m-3 w-25" >
         <img src="${book.img}" class="card-img-top" alt="image poster" />
         <div class="card-body d-flex flex-column justify-content-center align-items-center bg-light ">
           <h5 class="card-title" id="cardTitle">${book.title}</h5>
